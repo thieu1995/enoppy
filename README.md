@@ -4,8 +4,7 @@
 ---
 
 
-
-[![GitHub release](https://img.shields.io/badge/release-0.1.0-yellow.svg)](https://github.com/thieu1995/enoppy/releases)
+[![GitHub release](https://img.shields.io/badge/release-0.1.1-yellow.svg)](https://github.com/thieu1995/enoppy/releases)
 [![Wheel](https://img.shields.io/pypi/wheel/gensim.svg)](https://pypi.python.org/pypi/enoppy) 
 [![PyPI version](https://badge.fury.io/py/enoppy.svg)](https://badge.fury.io/py/enoppy)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/enoppy.svg)
@@ -66,7 +65,6 @@ enoppy
         chemical.py
         mechanism.py
     utils
-        operator.py
         validator.py
         visualize.py
     __init__.py
