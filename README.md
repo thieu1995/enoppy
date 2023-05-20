@@ -20,7 +20,7 @@
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/thieu1995/enoppy.svg)](http://isitmaintained.com/project/thieu1995/enoppy "Percentage of issues still open")
 ![GitHub contributors](https://img.shields.io/github/contributors/thieu1995/enoppy.svg)
 [![GitTutorial](https://img.shields.io/badge/PR-Welcome-%23FF8300.svg?)](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3711948.svg)](https://doi.org/10.5281/zenodo.3711948)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7953206.svg)](https://doi.org/10.5281/zenodo.7953206)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 
@@ -30,8 +30,8 @@ optimization problems. Contains all real-world engineering problems from CEC com
 * **Free software:** GNU General Public License (GPL) V3 license
 * **Total problems**: > 50 problems
 * **Documentation:** https://enoppy.readthedocs.io/en/latest/
-* **Python versions:** 3.6.x, 3.7.x, 3.8.x, 3.9.x, 3.10.x
-* **Dependencies:** numpy, scipy, pandas, matplotlib
+* **Python versions:** 3.7.x, 3.8.x, 3.9.x, 3.10.x, 3.11.x
+* **Dependencies:** numpy, scipy, matplotlib
 
 
 
@@ -165,13 +165,14 @@ We share lots of information, questions, and answers there. You will get more su
 If you are using enoppy in your project, we would appreciate citations:
 
 ```code 
-@software{thieu_nguyen_2020_3711682,
+@software{nguyen_van_thieu_2023_7953207,
   author       = {Nguyen Van Thieu},
   title        = {ENOPPY: A Python Library for Engineering Optimization Problems},
-  year         = 2020,
+  month        = may,
+  year         = 2023,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.3620960},
-  url          = {https://doi.org/10.5281/zenodo.3620960.}
+  doi          = {10.5281/zenodo.7953206},
+  url          = {https://github.com/thieu1995/enoppy}
 }
 ```
 
