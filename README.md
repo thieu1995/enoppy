@@ -45,9 +45,7 @@ Install the [current PyPI release](https://pypi.python.org/pypi/enoppy):
 $ pip install enoppy==0.1.0
 ```
 
-### Install from source
-
-In case you want to install directly from the source code, use:
+### Install directly from source code
 ```sh 
 $ git clone https://github.com/thieu1995/enoppy.git
 $ cd enoppy
@@ -55,10 +53,9 @@ $ python setup.py install
 ```
 
 
-## Lib's structure
+### Lib's structure
 
 ```code 
-
 docs
 examples
 enoppy
@@ -141,7 +138,7 @@ For more usage examples please look at [examples](/examples) folder.
 
 
 
-### Get helps (questions, problems)
+# Get helps (questions, problems)
 
 * Official source code repo: https://github.com/thieu1995/enoppy
 * Official document: https://enoppy.readthedocs.io/
@@ -163,7 +160,7 @@ For more usage examples please look at [examples](/examples) folder.
 We share lots of information, questions, and answers there. You will get more support and knowledge there.
 
 
-### Cite Us
+## Cite Us
 
 If you are using enoppy in your project, we would appreciate citations:
 
@@ -179,16 +176,17 @@ If you are using enoppy in your project, we would appreciate citations:
 ```
 
 
-### References 
+## References 
 
 
-##### paper_based
+#### paper_based
 
-* ihaoavoa_2022: Xiao, Y., Guo, Y., Cui, H., Wang, Y., Li, J., & Zhang, Y. (2022). IHAOAVOA: An improved hybrid aquila optimizer and African vultures optimization algorithm for global optimization problems. Mathematical Biosciences and Engineering, 19(11), 10963-11017.
 
-* moeosma_2023: Luo, Q., Yin, S., Zhou, G., Meng, W., Zhao, Y., & Zhou, Y. (2023). Multi-objective equilibrium optimizer slime mould algorithm and its application in solving engineering problems. Structural and Multidisciplinary Optimization, 66(5), 114.
+* **ihaoavoa_2022**: Xiao, Y., Guo, Y., Cui, H., Wang, Y., Li, J., & Zhang, Y. (2022). IHAOAVOA: An improved hybrid aquila optimizer and African vultures optimization algorithm for global optimization problems. Mathematical Biosciences and Engineering, 19(11), 10963-11017.
 
-* pdo_2022: Ezugwu, A. E., Agushaka, J. O., Abualigah, L., Mirjalili, S., & Gandomi, A. H. (2022). Prairie dog optimization algorithm. Neural Computing and Applications, 34(22), 20017-20065.
+* **moeosma_2023**: Luo, Q., Yin, S., Zhou, G., Meng, W., Zhao, Y., & Zhou, Y. (2023). Multi-objective equilibrium optimizer slime mould algorithm and its application in solving engineering problems. Structural and Multidisciplinary Optimization, 66(5), 114.
 
-* rwco_2020: Kumar, A., Wu, G., Ali, M. Z., Mallipeddi, R., Suganthan, P. N., & Das, S. (2020). A test-suite of non-convex constrained optimization problems from the real-world and some baseline results. Swarm and Evolutionary Computation, 56, 100693.
+* **pdo_2022**: Ezugwu, A. E., Agushaka, J. O., Abualigah, L., Mirjalili, S., & Gandomi, A. H. (2022). Prairie dog optimization algorithm. Neural Computing and Applications, 34(22), 20017-20065.
+
+* **rwco_2020**: Kumar, A., Wu, G., Ali, M. Z., Mallipeddi, R., Suganthan, P. N., & Das, S. (2020). A test-suite of non-convex constrained optimization problems from the real-world and some baseline results. Swarm and Evolutionary Computation, 56, 100693.
 
