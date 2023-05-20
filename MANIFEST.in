@@ -1,0 +1,2 @@
+include README.md LICENSE CODE_OF_CONDUCT.md ChangeLog.md examples.md
+include enoppy/cec_based/data_2005/*.txt
