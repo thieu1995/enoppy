@@ -5,29 +5,25 @@
 # --------------------------------------------------%
 #
 # Examples:
-# >>> from enoppy.cec_based.cec2014 import F12014
-# >>>
-# >>> f1 = F12014(ndim=30, f_bias=100)
-# >>>
-# >>> lower_bound = f1.lb                       # Numpy array
-# >>> lower_bound_as_list = f1.lb.to_list()     # Python list
-# >>> upper_bound = f1.ub
-# >>> fitness = f1.evaluate
-# >>>
-# >>> solution = np.random.uniform(0, 1, 30)
-# >>> print(f1.evaluate(solution))
-# >>> print(fitness.evaluate(solution))
-# >>>
-# >>> print(f1.get_paras())         # Print the parameters of function if has
-# >>>
-# >>> Plot 2d or plot 3d contours
-# >>> Warning ! Only working on 2d functions objects !
-# >>> Warning !! change n_space to reduce the computing time
-# >>>
-# >>> import enoppy
-# >>> f2 = enoppy.cec_based.F22005(ndim=2)
-# >>> enoppy.plot_2d(f22005, n_space=1000, ax=None)
-# >>> enoppy.plot_3d(f22005, n_space=1000, ax=None)
+# >>> from enoppy.paper_based import moeosma_2023
+#
+# >>> p1 = moeosma_2023.SpeedReducerProblem()
+#
+# >>> print(p1.get_paras())
+# >>> print(p1.bounds)
+# >>> print(p1.n_dims)
+# >>> print(p1.n_objs)
+# >>> print(p1.n_cons)
+# >>> print(p1.lb)
+# >>> print(p1.ub)
+#
+# >>> x0 = p1.create_solution()
+# >>> print(x0)
+# >>> x0 = p1.amend_position(x0)
+#
+# >>> print(p1.get_objs(x0)) # Get all objectives
+# >>> print(p1.get_cons(x0)) # Get all constraints
+# >>> print(p1.evaluate(x0)) # Evaluate the x0 (calculate fitness value with objectives and constraints combination)
 
 __version__ = "0.1.0"
 
