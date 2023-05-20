@@ -34,7 +34,6 @@ Current's structure::
          chemical.py
          mechanism.py
       utils
-         operator.py
          validator.py
          visualize.py
       __init__.py

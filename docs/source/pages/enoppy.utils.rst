@@ -9,14 +9,6 @@ enoppy.utils.encoder
    :undoc-members:
    :show-inheritance:
 
-enoppy.utils.operator
----------------------
-
-.. automodule:: enoppy.utils.operator
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 enoppy.utils.validator
 ----------------------
 
