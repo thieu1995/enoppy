@@ -5,14 +5,14 @@
 # --------------------------------------------------%
 
 import numpy as np
-from abc import ABC, abstractmethod
+from abc import ABC
 
 
 class Engineer(ABC):
     """
     Defines an abstract class for engineering design problems.
 
-    All subclasses should implement the ``evaluate`` method for a particular optimization problem.
+    All subclasses should implement the ``evaluate`` method for a particular problem.
 
     Attributes
     ----------
@@ -32,29 +32,13 @@ class Engineer(ABC):
         Note that some problems have multiple global minima, not all of which may be listed.
     n_fe : int
         The number of function evaluations that the object has been asked to calculate.
-    dim_changeable : bool
-        Whether we can change the benchmark function `x` variable length (i.e., the dimensionality of the problem)
     """
 
     name = "Benchmark name"
-    latex_formula = r'f(\mathbf{x})'
-    latex_formula_dimension = r'd \in \mathbb{N}_{+}^{*}'
-    latex_formula_bounds = r'x_i \in [-2\pi, 2\pi], \forall i \in \llbracket 1, d\rrbracket'
-    latex_formula_global_optimum = r'f(0, ..., 0)=-1, \text{ for}, m=5, \beta=15'
-    continuous = True
     linear = False
     convex = True
-    unimodal = False
-    separable = False
-
     differentiable = True
-    scalable = True
-    randomized_term = False
     parametric = True
-
-    modality = True  # Number of ambiguous peaks, unknown # peaks
-    # n_basins = 1
-    # n_valleys = 1
 
     def __init__(self):
         self._bounds = None
