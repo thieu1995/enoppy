@@ -6,7 +6,6 @@
 
 from enoppy.paper_based import moeosma_2023
 import numpy as np
-import pytest
 
 
 def test_SpeedReducerProblem():
@@ -21,4 +20,3 @@ def test_SpeedReducerProblem():
     assert np.all(p1.get_objs(x0) - np.array([2352.44784872, 1695.96387746]))
     assert len(p1.get_cons(x0)) == p1.n_cons
     assert np.all(p1.evaluate(x0) - np.array([7.49307543e+10, 7.49307536e+10]))
-

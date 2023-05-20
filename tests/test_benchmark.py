@@ -6,18 +6,17 @@
 
 import numpy as np
 from enoppy.engineer import Engineer
-import pytest
 
 
 def test_Benchmark_class():
     ndim = 10
-    bounds = np.array([[-15, ]*ndim, [15, ]*ndim]).T
+    bounds = np.array([[-15, ] * ndim, [15, ] * ndim]).T
     problem = Engineer()
     problem._bounds = bounds
 
     x = np.random.uniform(problem.lb, problem.ub)
 
-    assert len(problem.lb) == ndim
+    assert len(problem.lb) == len(x)
     assert isinstance(problem.lb, np.ndarray)
     assert type(problem.bounds) == np.ndarray
     assert problem.bounds.shape[0] == ndim
