@@ -72,14 +72,12 @@ class Engineer(ABC):
         self.epsilon = 1e-8
         self.w = 1e8
 
-    @abstractmethod
     def get_objs(self, x):
         """
         Compute the values of the objective functions for a given set of input values.
         """
         pass
 
-    @abstractmethod
     def get_cons(self, x):
         """
         Compute the values of the constraint functions for a given set of input values.
