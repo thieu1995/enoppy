@@ -25,8 +25,7 @@
 
 
 ENOPPY (ENgineering Optimization Problems in PYthon) is the largest python library for real-world engineering 
-optimization problems. Contains all engineering problems from CEC competition functions from 2005, 2008, 2010, 2013, 
-2014, 2015, 2017, 2019, 2020, 2021, 2022. 
+optimization problems. Contains all real-world engineering problems from CEC competitions and research papers.
 
 * **Free software:** GNU General Public License (GPL) V3 license
 * **Total problems**: > 50 problems
@@ -44,12 +43,6 @@ optimization problems. Contains all engineering problems from CEC competition fu
 Install the [current PyPI release](https://pypi.python.org/pypi/enoppy):
 ```sh 
 $ pip install enoppy==0.1.0
-```
-
-Or install the development version from GitHub:
-
-```bash
-pip install git+https://github.com/thieu1995/enoppy
 ```
 
 ### Install from source
@@ -101,40 +94,47 @@ Let's go through some examples.
 
 ### Examples
 
-How to get the function and use it
-
-#### 1st way
+How to get the problem and use it
 
 ```python
-from enoppy.cec_based.cec2014 import F12014
+from enoppy.paper_based.moeosma_2023 import SpeedReducerProblem
+# SRP = SpeedReducerProblem
+# SP = SpringProblem
+# HTBP = HydrostaticThrustBearingProblem
+# VPP = VibratingPlatformProblem
+# CSP = CarSideImpactProblem
+# WRMP = WaterResourceManagementProblem
+# BCP = BulkCarriersProblem
+# MPBPP = MultiProductBatchPlantProblem
 
-func = F12014(ndim=30)
-func.evaluate(func.create_solution())
+srp_prob = SpeedReducerProblem()
+print("Lower bound for this problem: ", srp_prob.lb)
+print("Upper bound for this problem: ", srp_prob.ub)
+x0 = srp_prob.create_solution()
+print("Get the objective values of x0: ", srp_prob.get_objs(x0))
+print("Get the constraint values of x0: ", srp_prob.get_cons(x0))
+print("Evaluate with default penalty function: ", srp_prob.evaluate(x0))
 
-## or
-
-from enoppy.cec_based import F102014
-
-func = F102014(ndim=50)
-func.evaluate(func.create_solution())
 ```
 
-
-#### 2nd way
+Design my own penalty function:
 
 ```python
+import numpy as np
+from enoppy.paper_based.moeosma_2023 import HTBP
+# HTBP = HydrostaticThrustBearingProblem
 
-import enoppy
+def penalty_func(list_objectives, list_constraints):
+    list_constraints[list_constraints < 0] = 0
+    return np.sum(list_objectives) + 1e5 * np.sum(list_constraints**2) 
 
-funcs = enoppy.get_functions_by_classname("F12014")
-func = funcs[0](ndim=10)
-func.evaluate(func.create_solution())
-
-## or
-
-all_funcs_2014 = enoppy.get_functions_based_classname("2014")
-print(all_funcs_2014)
-
+htbp_prob = HTBP(f_penalty=penalty_func)
+print("Lower bound for this problem: ", htbp_prob.lb)
+print("Upper bound for this problem: ", htbp_prob.ub)
+x0 = htbp_prob.create_solution()
+print("Get the objective values of x0: ", htbp_prob.get_objs(x0))
+print("Get the constraint values of x0: ", htbp_prob.get_cons(x0))
+print("Evaluate with default penalty function: ", htbp_prob.evaluate(x0))
 ```
 
 For more usage examples please look at [examples](/examples) folder.
@@ -150,9 +150,11 @@ For more usage examples please look at [examples](/examples) folder.
 * Notable changes log: https://github.com/thieu1995/enoppy/blob/master/ChangeLog.md
 * Examples with different meapy version: https://github.com/thieu1995/enoppy/blob/master/examples.md
 
-* This project also related to our another projects which are "meta-heuristics" and "neural-network", check it here
+* This project also related to our another projects which are "meta-heuristics", "neural-network", and "optimization" 
+  check it here
     * https://github.com/thieu1995/mealpy
     * https://github.com/thieu1995/metaheuristics
+    * https://github.com/thieu1995/opfunu
     * https://github.com/thieu1995/permetrics
     * https://github.com/aiir-team
 
@@ -179,11 +181,14 @@ If you are using enoppy in your project, we would appreciate citations:
 
 ### References 
 
-```code
-1. http://benchmarkfcns.xyz/fcns
-2. https://en.wikipedia.org/wiki/Test_functions_for_optimization
-3. https://www.cs.unm.edu/~neal.holts/dga/benchmarkFunction/
-4. http://www.sfu.ca/~ssurjano/optimization.html
-5. A Literature Survey of Benchmark Functions For Global Optimization Problems (2013)
-6. Problem Definitions and Evaluation Criteria for the CEC 2014 Special Session and Competition on Single Objective Real-Parameter Numerical Optimization 
-```
+
+##### paper_based
+
+* ihaoavoa_2022: Xiao, Y., Guo, Y., Cui, H., Wang, Y., Li, J., & Zhang, Y. (2022). IHAOAVOA: An improved hybrid aquila optimizer and African vultures optimization algorithm for global optimization problems. Mathematical Biosciences and Engineering, 19(11), 10963-11017.
+
+* moeosma_2023: Luo, Q., Yin, S., Zhou, G., Meng, W., Zhao, Y., & Zhou, Y. (2023). Multi-objective equilibrium optimizer slime mould algorithm and its application in solving engineering problems. Structural and Multidisciplinary Optimization, 66(5), 114.
+
+* pdo_2022: Ezugwu, A. E., Agushaka, J. O., Abualigah, L., Mirjalili, S., & Gandomi, A. H. (2022). Prairie dog optimization algorithm. Neural Computing and Applications, 34(22), 20017-20065.
+
+* rwco_2020: Kumar, A., Wu, G., Ali, M. Z., Mallipeddi, R., Suganthan, P. N., & Das, S. (2020). A test-suite of non-convex constrained optimization problems from the real-world and some baseline results. Swarm and Evolutionary Computation, 56, 100693.
+
