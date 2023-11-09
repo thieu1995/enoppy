@@ -1213,7 +1213,7 @@ class PlanetaryGearTrainDesignOptimizationProblem(Engineer):
         return x
 
     def get_objs(self, x):
-        N1, N2, N3, N4, N5, N6, p = x[:6]
+        N1, N2, N3, N4, N5, N6, p = x[:7]
         i1 = N6 / N4
         i01 = 3.11
         i2 = N6 * (N1 * N3 + N2 * N4) / (N1 * N3 * (N6 - N4))
@@ -1224,12 +1224,12 @@ class PlanetaryGearTrainDesignOptimizationProblem(Engineer):
         return np.array([f1])
 
     def get_eq_cons(self, x):
-        N1, N2, N3, N4, N5, N6, p = x[:6]
+        N1, N2, N3, N4, N5, N6, p = x[:7]
         hx = np.remainder(N6 - N4, p)
         return np.array([hx, ])
 
     def get_ineq_cons(self, x):
-        N1, N2, N3, N4, N5, N6, p = x[:6]
+        N1, N2, N3, N4, N5, N6, p = x[:7]
         m1 = self.mind[x[7]]
         m2 = self.mind[x[8]]
         gx = np.zeros(self.n_ineq_cons)
