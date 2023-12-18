@@ -30,51 +30,17 @@ optimization problems. Contains all real-world engineering problems from CEC com
 * **Total problems**: > 50 problems
 * **Documentation:** https://enoppy.readthedocs.io/en/latest/
 * **Python versions:** 3.7.x, 3.8.x, 3.9.x, 3.10.x, 3.11.x
-* **Dependencies:** numpy, scipy, matplotlib
+* **Dependencies:** numpy, scipy
 
 
 
 
 # Installation
 
-### Install with pip
-
 Install the [current PyPI release](https://pypi.python.org/pypi/enoppy):
 ```sh 
-$ pip install enoppy==0.1.0
+$ pip install enoppy
 ```
-
-### Install directly from source code
-```sh 
-$ git clone https://github.com/thieu1995/enoppy.git
-$ cd enoppy
-$ python setup.py install
-```
-
-
-### Lib's structure
-
-```code 
-docs
-examples
-enoppy
-    paper_based
-        pdo_2022.py
-        rwco_2020.py
-    problem_based
-        chemical.py
-        mechanism.py
-    utils
-        validator.py
-        visualize.py
-    __init__.py
-    engineer.py
-README.md
-setup.py
-```
-
-
-# Usage
 
 After installation, you can import ENOPPY as any other Python module:
 
@@ -84,12 +50,12 @@ $ python
 >>> enoppy.__version__
 ```
 
-Let's go through some examples.
 
+# Usage
 
-### Examples
+This is a minimal usage example of the enoppy library.
 
-How to get the problem and use it
+1) How to get the problem and use it
 
 ```python
 from enoppy.paper_based.moeosma_2023 import SpeedReducerProblem
@@ -112,7 +78,7 @@ print("Evaluate with default penalty function: ", srp_prob.evaluate(x0))
 
 ```
 
-Design my own penalty function:
+2) Design my own penalty function:
 
 ```python
 import numpy as np
@@ -132,8 +98,7 @@ print("Get the constraint values of x0: ", htbp_prob.get_cons(x0))
 print("Evaluate with default penalty function: ", htbp_prob.evaluate(x0))
 ```
 
-For more usage examples please look at [examples](/examples) folder.
-
+For more examples, check out [examples](/examples) folder and the [enoppy](https://enoppy.readthedocs.io/) documentation
 
 
 # Get helps (questions, problems)
@@ -144,21 +109,23 @@ For more usage examples please look at [examples](/examples) folder.
 * Issue tracker: https://github.com/thieu1995/enoppy/issues
 * Notable changes log: https://github.com/thieu1995/enoppy/blob/master/ChangeLog.md
 * Examples with different meapy version: https://github.com/thieu1995/enoppy/blob/master/examples.md
+* Join our telegram community: [link](https://t.me/+fRVCJGuGJg1mNDg1)
 
 * This project also related to our another projects which are "meta-heuristics", "neural-network", and "optimization" 
   check it here
-    * https://github.com/thieu1995/mealpy
-    * https://github.com/thieu1995/metaheuristics
+	* https://github.com/thieu1995/mealpy
+	* https://github.com/thieu1995/permetrics
     * https://github.com/thieu1995/opfunu
-    * https://github.com/thieu1995/permetrics
+    * https://github.com/thieu1995/metaheuristics
+    * https://github.com/thieu1995/MetaCluster
+    * https://github.com/thieu1995/pfevaluator
+    * https://github.com/thieu1995/IntelELM
+    * https://github.com/thieu1995/MetaPerceptron
+    * https://github.com/thieu1995/GrafoRVFL
+    * https://github.com/thieu1995/reflame
     * https://github.com/aiir-team
 
-
-**Want to have an instant assistant? Join our telegram community at [link](https://t.me/+fRVCJGuGJg1mNDg1)**
-We share lots of information, questions, and answers there. You will get more support and knowledge there.
-
-
-## Cite Us
+# Acknowledgments
 
 If you are using enoppy in your project, we would appreciate citations:
 
@@ -166,11 +133,19 @@ If you are using enoppy in your project, we would appreciate citations:
 @software{nguyen_van_thieu_2023_7953207,
   author       = {Nguyen Van Thieu},
   title        = {ENOPPY: A Python Library for Engineering Optimization Problems},
-  month        = may,
   year         = 2023,
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.7953206},
   url          = {https://github.com/thieu1995/enoppy}
+}
+
+@article{van2023mealpy,
+  title={MEALPY: An open-source library for latest meta-heuristic algorithms in Python},
+  author={Van Thieu, Nguyen and Mirjalili, Seyedali},
+  journal={Journal of Systems Architecture},
+  year={2023},
+  publisher={Elsevier},
+  doi={10.1016/j.sysarc.2023.102871}
 }
 ```
 
