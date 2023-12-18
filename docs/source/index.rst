@@ -57,14 +57,6 @@ Welcome to ENOPPY's documentation!
 .. image:: https://img.shields.io/badge/License-GPLv3-blue.svg
    :target: https://www.gnu.org/licenses/gpl-3.0
 
-::
-
-   "Knowledge is power, sharing it is the premise of progress in life.
-   It seems like a burden to someone, but it is the only way to achieve immortality.
-                                                   `Nguyen Van Thieu`_
-
-
-.. _Nguyen Van Thieu: https://www.thieu1995.github.io/
 
 ENOPPY (ENgineering Optimization Problems in PYthon) is the largest python library for real-world engineering
 optimization problems. Contains all real-world engineering problems from CEC competitions and research papers.
@@ -73,7 +65,7 @@ optimization problems. Contains all real-world engineering problems from CEC com
 * **Total problems**: > 50 problems
 * **Documentation:** https://enoppy.readthedocs.io/en/latest/
 * **Python versions:** 3.7.x, 3.8.x, 3.9.x, 3.10.x, 3.11.x
-* **Dependencies:** numpy, scipy, matplotlib
+* **Dependencies:** numpy, scipy
 
 
 Features

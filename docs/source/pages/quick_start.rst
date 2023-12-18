@@ -8,7 +8,7 @@ Installation
 
 * Install the `current PyPI release <https://pypi.python.org/pypi/enoppy />`_::
 
-   $ pip install enoppy==0.1.0
+   $ pip install enoppy==0.1.1
 
 
 * Install directly from source code::
