@@ -18,5 +18,5 @@ def test_Benchmark_class():
 
     assert len(problem.lb) == len(x)
     assert isinstance(problem.lb, np.ndarray)
-    assert type(problem.bounds) == np.ndarray
+    assert isinstance(problem.bounds, np.ndarray)
     assert problem.bounds.shape[0] == ndim
