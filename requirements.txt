@@ -1,7 +1,8 @@
-numpy>=1.17.1
-matplotlib>=3.3.0
-scipy>=1.7.1
 pytest==7.1.2
 pytest-cov==4.0.0
 flake8>=4.0.1
-mealpy>=2.5.3
+numpy>=1.17.1
+matplotlib>=3.3.0
+scipy>=1.7.1
+mealpy>=3.0.1
+opfunu>=1.0.0

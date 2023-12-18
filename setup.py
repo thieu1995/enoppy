@@ -68,7 +68,7 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
     ],
-    install_requires=["numpy>=1.17.1", "matplotlib>=3.3.0", "scipy>=1.7.1", "mealpy>=2.5.3", "opfunu>=1.0.0"],
+    install_requires=["numpy>=1.17.1", "scipy>=1.7.1", "mealpy>=3.0.1", "opfunu>=1.0.0"],
     extras_require={
         "dev": ["pytest>=7.0", "twine>=4.0.1"],
     },
