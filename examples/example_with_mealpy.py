@@ -4,20 +4,19 @@
 #       Github: https://github.com/thieu1995        %                         
 # --------------------------------------------------%
 
-from mealpy.bio_based import SMA
+from mealpy import SMA, FloatVar
 from enoppy.paper_based import moeosma_2023
 
 prob = moeosma_2023.SpeedReducerProblem()
 
-problem_dict1 = {
-    "fit_func": prob.evaluate,
-    "lb": prob.lb,
-    "ub": prob.ub,
+problem = {
+    "bounds": FloatVar(lb=prob.lb, ub=prob.ub),
+    "obj_func": prob.evaluate,
     "minmax": "min",
-    "log_to": None,
+    "obj_weights": [0.5, 0.5]
 }
 
 ## Run the algorithm
-model = SMA.BaseSMA(problem_dict1, epoch=100, pop_size=50, pr=0.03)
-best_position, best_fitness = model.solve()
-print(f"Best solution: {best_position}, Best fitness: {best_fitness}")
+model = SMA.OriginalSMA(epoch=100, pop_size=50, pr=0.03)
+g_best = model.solve(problem)
+print(f"Best solution: {g_best.solution}, Best fitness: {g_best.target.fitness}")

@@ -23,4 +23,3 @@ x0 = p1.amend_position(x0)
 print(p1.get_objs(x0))
 print(p1.get_cons(x0))
 print(p1.evaluate(x0))
-
